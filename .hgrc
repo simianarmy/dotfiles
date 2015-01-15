@@ -1,0 +1,98 @@
+[ui]
+# Name data to appear in commits
+username = Marc Mauger <marc.mauger@igt.com>
+editor = /usr/bin/vim -c "r ~/.hgtemplate"
+ssh = ssh -C
+merge = p4merge
+
+[pager]
+pager = LESS='FRX' less -d
+
+[bookmarks]
+track.current = True
+
+[extensions]
+extdiff =
+# supports announcing and browsing repos via Bonjour
+zeroconf =
+# # rebase or re-parent changesets (only for emergencies!)
+# rebase =
+# # cherry-picking and transplanting (makes a merge act like  'svn merge -c' )
+transplant =
+# # color highlighting
+color =
+# # support for patch queues
+mq =
+# # show progress bars for some actions
+progress =
+# # add shortcuts for URL schemes
+hgext.schemes =
+# # use foo^ to refer to parent revision of foo
+parentrevspec =
+# # pull, merge, and update in one step
+hgext.fetch=
+# #  Convert repositories from other SCMs into Mercurial
+convert =
+# # compare changes using external programs
+shelve =
+onsub = /usr/local/bin/onsub.py
+histedit =
+
+[extdiff]
+cmd.diffmerge = /usr/bin/diffmerge
+cmd.dw = /Applications/DeltaWalker.app/Contents/MacOS/hg
+cmd.other = internal:other
+
+# FileMerge
+cmd.opendiff = /Applications/MacHg.app/Contents/Resources/fmdiff.sh
+
+# P4merge
+cmd.p4diff = /Applications/p4merge.app/Contents/Resources/launchp4merge
+
+# DiffMerge
+cmd.diffmerge = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge
+opts.diffmerge = --nosplash
+
+#
+[color]
+mode = auto
+
+[diff]
+# use Git-style diffing by default
+#git = True
+
+[schemes]
+ddi = ssh://hg@bitbucket.org/ddimobiledev/
+
+[merge-tools]
+# P4merge
+p4merge.premerge = True
+p4merge.executable = /Applications/p4merge.app/Contents/Resources/launchp4merge
+p4merge.args = $base $local $other $output
+p4merge.binary = False
+p4merge.diffargs = $parent $child
+p4merge.diff3args=$child $parent1 $parent2
+p4merge.dirdiff=False
+# DiffMerge
+diffmerge.executable = /usr/bin/diffmerge
+diffmerge.args = --nosplash --result=$output -t1="Local Version" -t2=$output -t3="Other Version" --caption=$output  $local $base $other
+diffmerge.gui = True
+# DeltaWalker
+dw.executable = /Applications/DeltaWalker.app/Contents/MacOS/hg
+dw.args = $local $other $base -merged=$output
+dw.gui = True
+#FileMerge
+opendiff.args = $local $other -ancestor $base -merge $output
+opendiff.executable = /Applications/MacHg.app/Contents/Resources/opendiff-w.sh
+
+# Control which merge tools is run for each file pattern
+[merge-patterns]
+**.gz = internal:other
+**.css = internal:other
+**_generated.js = internal:other
+**spritesheetjsondata_*.* = internal:other
+**ssjsondata_*.* = internal:other
+**/spritesheets/*.js = internal:other
+**/spritesheets/*.png = internal:other
+**compiled_*.js = internal:other
+**deps_*.js = internal:other
