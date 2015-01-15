@@ -1,2 +1,6 @@
 # dotfiles
-All my common dotfiles
+
+- zsh rc
+- oh-my-zsh directory
+- mercurial rc
+
