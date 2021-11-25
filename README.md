@@ -7,14 +7,19 @@
 
 # Setup
 ```
+brew install tmux fzf navi
 cd
 git clone <this-repo>
 cd dotfiles
 git submodule update --init --recursive
+./fonts/install.sh
 cd ..
-ln -s dotfiles/.zshrc .zshrc
-ln -s dotfiles/tmux.conf .tmux.conf
+ln -s dotfiles/dot-zshrc .zshrc
+ln -s dotfiles/dot-tmux.conf .tmux.conf
 <Start new session>
 ```
 
-  
+## Fonts
+
+Select a Powerline font in iTerm2 Preferences
+
