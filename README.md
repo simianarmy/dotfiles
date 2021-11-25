@@ -1,9 +1,13 @@
 # dotfiles
 # Contents
-- zsh / oh-my-zsh rc
+- oh-my-zsh / antigen
 - nvim rc and plugins
 - tmux config
+- Powerline fonts
 - ~mercurial rc~
+
+# Prerequisites
+- nvm installed & a Node version
 
 # Setup
 ```
