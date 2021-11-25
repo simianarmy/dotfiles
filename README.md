@@ -19,6 +19,8 @@ cd ..
 ln -s dotfiles/dot-zshrc .zshrc
 ln -s dotfiles/dot-tmux.conf .tmux.conf
 ln -s dotfiles/vim/vimrc .vimrc
+mkdir -p .config/nvim
+cp dotfiles/nvim-init.vim .config/nvim/init.vim
 <Start new session>
 ```
 
