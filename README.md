@@ -6,15 +6,12 @@
 - tmux config
 
 # Setup
-> cd \n git clone <this-repo>
-  
-> cd dotfiles
-  
-> git submodule update --init --recursive
-  
-> cd ..
-  
-> ln -s dotfiles/.zshrc .zshrc
-  
-> source .zshrc
+```cd
+git clone <this-repo>
+cd dotfiles
+git submodule update --init --recursive
+cd ..
+ln -s dotfiles/.zshrc .zshrc
+source .zshrc
+```
   
