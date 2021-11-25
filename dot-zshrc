@@ -1,4 +1,4 @@
-source ~/antigen/antigen.zsh
+source ~/dotfiles/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -21,7 +21,7 @@ antigen bundle virtualenv
 antigen bundle brew
 antigen bundle brew-cask
 antigen bundle gem
-antigen bundle osx
+antigen bundle macos
 
 antigen bundle jdavis/zsh-files
 
