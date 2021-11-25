@@ -13,6 +13,8 @@ cd dotfiles
 git submodule update --init --recursive
 cd ..
 ln -s dotfiles/.zshrc .zshrc
-source .zshrc
+ln -s dotfiles/tmux.conf .tmux.conf
+<Start new session>
 ```
+
   
