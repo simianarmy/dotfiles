@@ -6,9 +6,7 @@
 - tmux config
 
 # Setup
-> cd
-
-> git clone <this-repo>
+> cd \n git clone <this-repo>
   
 > cd dotfiles
   
