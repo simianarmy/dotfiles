@@ -20,8 +20,9 @@ cd dotfiles
 git submodule update --init --recursive
 ./fonts/install.sh
 cd ..
-ln -s dotfiles/dot-zshrc .zshrc
-ln -s dotfiles/dot-tmux.conf .tmux.conf
+ln -s dotfiles/zsh/.zshrc .zshrc
+ln -s dotfiles/zsh/.zsh_profile .zsh_profile
+ln -s dotfiles/tmux/.tmux.conf .tmux.conf
 ln -s dotfiles/vim/vimrc .vimrc
 mkdir -p .config/nvim
 cp dotfiles/nvim-init.vim .config/nvim/init.vim
