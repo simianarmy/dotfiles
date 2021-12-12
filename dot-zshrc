@@ -27,7 +27,7 @@ antigen bundle fzf
 #antigen theme agnoster
 antigen theme robbyrussell
 
-#source ~/.profile
+source ~/.profile
 
 antigen apply
 
