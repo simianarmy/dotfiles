@@ -1,40 +1,8 @@
-source ~/dotfiles/antigen/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle git
-antigen bundle git-extras
-#antigen bundle git-prompt
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle rupa/z
-# For SSH, starting ssh-agent is annoying
-antigen bundle ssh-agent
-# Node Plugins
-antigen bundle node
-# Python Plugins
-antigen bundle pip
-antigen bundle python
-antigen bundle virtualenv
-# OS Plugins
-antigen bundle brew
-#antigen bundle brew-cask
-antigen bundle gem
-antigen bundle jdavis/zsh-files
-antigen bundle emoji
-antigen bundle fzf
-
-# Load the theme
-#antigen theme agnoster
-antigen theme robbyrussell
-
-#source ~/.profile
-
-antigen apply
+VIM="nvim"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 nvm use default
 
 # place this after nvm initialization!
@@ -58,15 +26,13 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-cd
+export GIT_EDITOR=$VIM
+export ZWIFT_SRC_HOME=$HOME/code
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(navi widget zsh)"
 
-export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+# Aliases
 
 # Rust
 alias ct="cargo test"
@@ -78,8 +44,45 @@ alias ctp="cargo test -- --nocapture"
 alias workdir="cd $HOME/Documents/Constructive/code"
 alias const="workdir && cd Sites/"
 
+alias ztheme="cd ~/code/zwift-shopify-theme"
+alias zwc="cd ~/code/Zwift-Web-Core"
+
+function gcobr {
+  IFS=$'\n'
+  branches=($(git branch | grep $1 | awk '{$1=$1};1'))
+  if [ $ZSH_VERSION ]; then
+    setopt sh_word_split
+  fi
+  count=0
+  for item in $branches
+  do
+    count=$((count+1))
+    echo "${count}. $item"
+  done
+
+  if [ $count -gt 1 ]; then
+    echo ""
+    vared -p "Select branch #: " -c selection
+    branch=$branches[$selection]
+  else
+    branch=$branches
+  fi
+
+  if [ -n "$branch" ]; then
+    echo "git checkout ${branch}"
+    git checkout $branch
+  fi
+}
+
 # pyenv
 export PATH=$(pyenv root)/shims:$PATH
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
