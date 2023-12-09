@@ -30,6 +30,6 @@ antigen bundle fzf
 #antigen theme agnoster
 antigen theme robbyrussell
 
-source $HOME/.zsh_profile
+source $DOTFILES/zsh/.zsh_profile
 
 antigen apply
