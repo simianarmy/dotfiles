@@ -9,7 +9,7 @@
 	url = https://github.com/simianarmy/vim
 [submodule "nvim"]
 	path = nvim
-	url = https://github.com/simianarmy/nvim
+	url = git@github.com:simianarmy/nvim.git
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
