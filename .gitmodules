@@ -7,6 +7,9 @@
 [submodule "vim"]
 	path = vim
 	url = https://github.com/simianarmy/vim
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/simianarmy/nvim
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
