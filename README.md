@@ -1,7 +1,7 @@
 # dotfiles
 # Contents
 - oh-my-zsh / antigen
-- nvim rc and plugins
+- nvim lua config
 - tmux config
 - Powerline fonts
 - ~mercurial rc~
@@ -23,9 +23,8 @@ cd ..
 ln -s dotfiles/zsh/.zshrc .zshrc
 ln -s dotfiles/zsh/.zsh_profile .zsh_profile
 ln -s dotfiles/tmux/.tmux.conf .tmux.conf
-ln -s dotfiles/vim/vimrc .vimrc
 mkdir -p .config/nvim
-cp dotfiles/nvim-init.vim .config/nvim/init.vim
+cp dotfiles/nvim/* .config/nvim/
 <Start new session>
 ```
 
