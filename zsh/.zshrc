@@ -1,9 +1,9 @@
 export DOTFILES=$HOME/dotfiles
 export ZSH=$DOTFILES/oh-my-zsh
 
-source $DOTFILES/antigen/antigen.zsh
-
 zstyle ':omz:update' mode reminder
+
+source $DOTFILES/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
