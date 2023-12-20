@@ -3,6 +3,8 @@ export ZSH=$DOTFILES/oh-my-zsh
 
 source $DOTFILES/antigen/antigen.zsh
 
+zstyle ':omz:update' mode reminder
+
 antigen use oh-my-zsh
 
 antigen bundle git
@@ -33,3 +35,5 @@ antigen theme robbyrussell
 source $DOTFILES/zsh/.zsh_profile
 
 antigen apply
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

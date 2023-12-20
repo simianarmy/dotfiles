@@ -42,9 +42,11 @@ alias ctp="cargo test -- --nocapture"
 # Constructive
 alias workdir="cd $HOME/Documents/Constructive/code"
 alias const="workdir && cd Sites/"
+alias sdf="const && cd sdf"
+alias sdft="sdf && cd web/app/themes/sdf"
 
-alias ztheme="cd ~/code/zwift-shopify-theme"
-alias zwc="cd ~/code/Zwift-Web-Core"
+alias ztheme="cd ~/Documents/Zwift/code/zwift-shopify-theme"
+alias zwc="cd ~/Documents/Zwift/code/Zwift-Web-Core"
 
 function gcobr {
   IFS=$'\n'
@@ -78,7 +80,12 @@ export PATH=$(pyenv root)/shims:$PATH
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export PATH="/usr/local/bin:$PATH"
 
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
