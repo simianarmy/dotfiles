@@ -11,15 +11,16 @@
 
 # Setup
 ```
-brew install tmux nvim fzf navi
-cd
+brew install tmux nvim fzf navi stow
 git clone <this-repo>
 cd dotfiles
 git submodule update --init --recursive
 ./fonts/install.sh
-cp zsh/.zshrc zsh/.zsh_profile tmux/.tmux.conf ~
-mkdir -p .config/nvim
-cp -r dotfiles/nvim/* .config/nvim/
+stow --target ~/.config .
+#cp zsh/.zshrc zsh/.zsh_profile tmux/.tmux.conf ~
+#mkdir -p .config/nvim
+#cp -r dotfiles/nvim/* .config/nvim/
+
 <Start new session>
 ```
 
